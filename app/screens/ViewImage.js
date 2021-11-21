@@ -40,7 +40,7 @@ export default function ViewImage() {
       </View>
       <Image
         style={{ flex: 0.6, width: "100%", height: "100%" }}
-        source={require("./assets/chair.jpg")}
+        source={require("../assets/chair.jpg")}
       />
       <View style={{ flex: 0.2, backgroundColor: "black" }}></View>
     </View>
