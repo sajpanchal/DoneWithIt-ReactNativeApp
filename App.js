@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-
+import ViewImage from "./ViewImage";
 export default function App() {
-  return (
+  return <ViewImage></ViewImage>;
+  /*return (
     <View style={{ flex: 1, alignItems: "center" }}>
       <Image
         style={{
@@ -36,5 +37,5 @@ export default function App() {
         <Text>sell what you don't need</Text>
       </View>
     </View>
-  );
+  );*/
 }
