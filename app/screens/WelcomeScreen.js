@@ -1,22 +1,33 @@
 import React from "react";
-import { Text, View, Image, StyleSheet } from "react-native";
+import { Text, View, Image, StyleSheet, ImageBackground } from "react-native";
+import CustomButton from "../components/CustomButton";
+
 export default function WelcomeScreen() {
   return (
-    <View style={Styles.mainView}>
-      <Image
-        style={Styles.image}
-        source={require("../assets/background.jpg")}
-      ></Image>
-      <View style={Styles.loginButton} />
-      <View style={Styles.registerButton} />
-      <View style={Styles.logoContainer}>
-        <Image
-          style={Styles.logo}
-          source={require("../assets/logo-red.png")}
-        ></Image>
-        <Text>sell what you don't need</Text>
+    <ImageBackground
+      source={require("../assets/background.jpg")}
+      resizeMode="cover"
+      style={Styles.mainView}
+    >
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+        }}
+      >
+        <View style={Styles.logoContainer}>
+          <Image
+            style={Styles.logo}
+            source={require("../assets/logo-red.png")}
+          ></Image>
+          <Text style={{ fontWeight: "bold", fontSize: 20 }}>
+            sell what you don't need
+          </Text>
+        </View>
       </View>
-    </View>
+      <CustomButton type="Login"></CustomButton>
+      <CustomButton type="Register"></CustomButton>
+    </ImageBackground>
   );
 }
 
@@ -34,6 +45,7 @@ const Styles = StyleSheet.create({
     backgroundColor: "tomato",
     flex: 0.125,
     width: "100%",
+    bottom: 20,
   },
   registerButton: {
     backgroundColor: "dodgerblue",
@@ -41,7 +53,7 @@ const Styles = StyleSheet.create({
     width: "100%",
   },
   logoContainer: {
-    flex: 0.2,
+    flex: 1,
     top: 80,
     position: "absolute",
   },
