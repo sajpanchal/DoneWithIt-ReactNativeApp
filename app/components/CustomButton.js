@@ -23,12 +23,12 @@ const loginStyles = StyleSheet.create({
     marginBottom: 5,
   },
   register: {
+    flex: 0.1,
     backgroundColor: "dodgerblue",
     width: "100%",
     height: "7%",
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.1,
     borderRadius: 35,
     marginBottom: 5,
   },

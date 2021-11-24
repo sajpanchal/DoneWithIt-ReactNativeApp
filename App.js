@@ -6,6 +6,13 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import AppText from "./app/components/AppText";
 import CustomButton from "./app/components/CustomButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Card from "./app/components/Card";
 export default function App() {
-  return <WelcomeScreen />;
+  return (
+    <Card
+      title="Red Jacket for sale!"
+      subtitle="$100"
+      image={require("./app/assets/jacket.jpg")}
+    />
+  );
 }

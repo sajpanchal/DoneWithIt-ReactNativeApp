@@ -41,17 +41,6 @@ const Styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  loginButton: {
-    backgroundColor: "tomato",
-    flex: 0.125,
-    width: "100%",
-    bottom: 20,
-  },
-  registerButton: {
-    backgroundColor: "dodgerblue",
-    flex: 0.125,
-    width: "100%",
-  },
   logoContainer: {
     flex: 1,
     top: 80,
