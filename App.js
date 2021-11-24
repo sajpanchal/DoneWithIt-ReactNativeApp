@@ -26,8 +26,9 @@ export default function App() {
         subtitle="$100"
         image={require("./app/assets/jacket.jpg")}
       />
-    </View>*/
+    </View>
 
-    <ListingDetails />
+    <ListingDetails />*/
+    <ViewImage />
   );
 }
