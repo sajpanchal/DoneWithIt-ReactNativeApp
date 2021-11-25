@@ -10,15 +10,10 @@ import Card from "./app/components/Card";
 import ListingDetails from "./app/components/ListingDetails";
 export default function App() {
   return (
-    /*<View
+    <View
       style={{
-        flex: 0.6,
-        width: "100%",
-        height: "40%",
         backgroundColor: "#f8f4f4",
-        alignItems: "center",
-        justifyContent: "center",
-        paddingHorizontal: 20,
+        padding: 20,
       }}
     >
       <Card
@@ -27,8 +22,8 @@ export default function App() {
         image={require("./app/assets/jacket.jpg")}
       />
     </View>
-
-    <ListingDetails />*/
-    <WelcomeScreen />
+    /*
+    <ListingDetails />
+    <WelcomeScreen />*/
   );
 }

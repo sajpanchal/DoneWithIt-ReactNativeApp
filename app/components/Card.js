@@ -14,38 +14,26 @@ export default function Card(props) {
 }
 
 const cardStyles = StyleSheet.create({
-  mainView: {
-    flex: 0.6,
-    width: "100%",
-    height: "40%",
-    backgroundColor: "#f8f4f4",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   card: {
-    //flex: 0.5,
-    width: "100%",
-    height: "90%",
     backgroundColor: "#fff",
-    borderRadius: 10,
-    justifyContent: "center",
-    alignContent: "center",
+    borderRadius: 15,
+    top: 20,
+    marginBottom: 20,
+    overflow: "hidden", //hides if the content is going outside its border.
   },
   image: {
-    flex: 1,
     width: "100%",
-    height: "100%",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    height: 200,
   },
   title: {
     fontSize: 20,
+    marginBottom: 7,
   },
   subtitle: {
     fontSize: 20,
     color: "dodgerblue",
   },
   text: {
-    margin: 10,
+    padding: 20,
   },
 });
