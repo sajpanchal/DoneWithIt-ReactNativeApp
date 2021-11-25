@@ -10,7 +10,7 @@ import Card from "./app/components/Card";
 import ListingDetails from "./app/components/ListingDetails";
 export default function App() {
   return (
-    <View
+    /*<View
       style={{
         backgroundColor: "#f8f4f4",
         padding: 20,
@@ -21,9 +21,9 @@ export default function App() {
         subtitle="$100"
         image={require("./app/assets/jacket.jpg")}
       />
-    </View>
-    /*
+    </View>*/
+
     <ListingDetails />
-    <WelcomeScreen />*/
+    // <WelcomeScreen />
   );
 }

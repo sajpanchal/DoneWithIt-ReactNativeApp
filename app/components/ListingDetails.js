@@ -1,45 +1,43 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import Card from "./Card";
+import ListItem from "./ListItem";
 export default function ListingDetails(props) {
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ flex: 0.7 }}>
+    <View>
+      <View style={Styles.cardContainer}>
         <Card
           title="Red Jacket for sale!"
           subtitle="$100"
           image={require("../assets/jacket.jpg")}
         />
       </View>
-      <View style={Styles.profile}>
-        <Image
-          style={Styles.profilePic}
-          source={require("../assets/mosh.jpg")}
-        ></Image>
-        <View style={Styles.text}>
-          <Text style={{ fontSize: 16 }}>Mosh Hamedani</Text>
-          <Text style={{ color: "grey", fontSize: 16 }}>5 Listings</Text>
-        </View>
+      <View style={Styles.userContainer}>
+        <ListItem
+          image={require("../assets/mosh.jpg")}
+          title="Mosh Hamedani"
+          subtitle="5 Listings"
+        />
       </View>
     </View>
   );
 }
 
 const Styles = StyleSheet.create({
+  cardContainer: {},
   profile: {
     flex: 0.5,
     width: "100%",
     height: "100%",
     flexDirection: "row",
-    margin: 10,
+    padding: 10,
   },
   text: {
-    margin: 10,
+    padding: 10,
     flex: 1,
     width: 100,
     height: 100,
     alignItems: "flex-start",
-    //   justifyContent: "center",
   },
   profilePic: {
     width: 100,
@@ -47,5 +45,8 @@ const Styles = StyleSheet.create({
     borderRadius: 500,
     alignContent: "center",
     justifyContent: "center",
+  },
+  userContainer: {
+    marginVertical: 50,
   },
 });
