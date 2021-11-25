@@ -3,17 +3,14 @@ import { StyleSheet, TouchableOpacity, Text, Platform } from "react-native";
 //
 function CustomButton(props) {
   return (
-    <TouchableOpacity
-      style={props.type === "Login" ? loginStyles.login : loginStyles.register}
-      onPress={props.onPress}
-    >
+    <TouchableOpacity style={loginStyles[props.type]} onPress={props.onPress}>
       <Text style={loginStyles.text}>{props.type}</Text>
     </TouchableOpacity>
   );
 }
 
 const loginStyles = StyleSheet.create({
-  login: {
+  Login: {
     backgroundColor: "tomato",
     width: "100%",
     alignItems: "center",
@@ -22,7 +19,7 @@ const loginStyles = StyleSheet.create({
     margin: 5,
     padding: 15,
   },
-  register: {
+  Register: {
     backgroundColor: "dodgerblue",
     width: "100%",
     alignItems: "center",

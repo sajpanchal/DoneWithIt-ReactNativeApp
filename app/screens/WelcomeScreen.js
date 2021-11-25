@@ -5,6 +5,7 @@ import CustomButton from "../components/CustomButton";
 export default function WelcomeScreen() {
   return (
     <ImageBackground
+      blurRadius={10}
       source={require("../assets/background.jpg")}
       resizeMode="cover"
       style={Styles.mainView}
@@ -20,23 +21,23 @@ export default function WelcomeScreen() {
             style={Styles.logo}
             source={require("../assets/logo-red.png")}
           ></Image>
-          <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-            sell what you don't need
-          </Text>
+          <Text style={Styles.tagline}>sell what you don't need</Text>
         </View>
       </View>
-      <CustomButton
-        type="Login"
-        onPress={() => {
-          console.log("login btn tapped!");
-        }}
-      ></CustomButton>
-      <CustomButton
-        type="Register"
-        onPress={() => {
-          console.log("register btn tapped!");
-        }}
-      ></CustomButton>
+      <View style={Styles.buttonsContainer}>
+        <CustomButton
+          type="Login"
+          onPress={() => {
+            console.log("login btn tapped!");
+          }}
+        ></CustomButton>
+        <CustomButton
+          type="Register"
+          onPress={() => {
+            console.log("register btn tapped!");
+          }}
+        ></CustomButton>
+      </View>
     </ImageBackground>
   );
 }
@@ -60,5 +61,12 @@ const Styles = StyleSheet.create({
     width: 100,
     height: 100,
     alignSelf: "center",
+    marginBottom: 10,
+  },
+  tagline: { fontWeight: "600", fontSize: 25 },
+  buttonsContainer: {
+    width: "100%",
+    alignItems: "center",
+    padding: 10,
   },
 });
