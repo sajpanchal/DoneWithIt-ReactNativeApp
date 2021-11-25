@@ -5,6 +5,7 @@ function CustomButton(props) {
   return (
     <TouchableOpacity
       style={props.type === "Login" ? loginStyles.login : loginStyles.register}
+      onPress={props.onPress}
     >
       <Text style={loginStyles.text}>{props.type}</Text>
     </TouchableOpacity>
@@ -13,28 +14,27 @@ function CustomButton(props) {
 
 const loginStyles = StyleSheet.create({
   login: {
-    flex: 0.1,
     backgroundColor: "tomato",
     width: "100%",
-    height: "7%",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 35,
-    marginBottom: 5,
+    margin: 5,
+    padding: 15,
   },
   register: {
-    flex: 0.1,
     backgroundColor: "dodgerblue",
     width: "100%",
-    height: "7%",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 35,
-    marginBottom: 5,
+    margin: 5,
+    padding: 15,
   },
   text: {
     color: "white",
-    fontSize: 20,
+    fontSize: 18,
+    textTransform: "uppercase",
     fontWeight: "bold",
   },
 });

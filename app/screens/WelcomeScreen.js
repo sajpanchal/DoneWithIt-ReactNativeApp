@@ -25,8 +25,18 @@ export default function WelcomeScreen() {
           </Text>
         </View>
       </View>
-      <CustomButton type="Login"></CustomButton>
-      <CustomButton type="Register"></CustomButton>
+      <CustomButton
+        type="Login"
+        onPress={() => {
+          console.log("login btn tapped!");
+        }}
+      ></CustomButton>
+      <CustomButton
+        type="Register"
+        onPress={() => {
+          console.log("register btn tapped!");
+        }}
+      ></CustomButton>
     </ImageBackground>
   );
 }

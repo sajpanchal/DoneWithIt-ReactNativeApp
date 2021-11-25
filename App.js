@@ -29,6 +29,6 @@ export default function App() {
     </View>
 
     <ListingDetails />*/
-    <ViewImage />
+    <WelcomeScreen />
   );
 }
