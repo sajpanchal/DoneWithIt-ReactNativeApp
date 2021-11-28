@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, View } from "react-native";
 import Card from "../components/Card";
+import Constants from "expo-constants";
 
 function Listings(props) {
   const cards = [
@@ -19,6 +20,7 @@ function Listings(props) {
   ];
   return (
     <FlatList
+      style={{ marginTop: Constants.statusBarHeight }}
       data={cards}
       keyExtractor={(card) => card.id.toString()}
       renderItem={({ item }) => (

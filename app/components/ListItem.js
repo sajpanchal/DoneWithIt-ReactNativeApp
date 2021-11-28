@@ -25,14 +25,31 @@ function ListItem(props) {
           alignItems: "center",
         }}
       >
-        <MaterialCommunityIcons
-          name={props.icon}
-          size={20}
-          color={colors.white}
-        ></MaterialCommunityIcons>
+        {props.icon ? (
+          <MaterialCommunityIcons
+            style={{}}
+            name={props.icon}
+            size={20}
+            color={colors.white}
+          ></MaterialCommunityIcons>
+        ) : (
+          <Image
+            source={props.image}
+            style={{
+              width: 60,
+              height: 60,
+              borderRadius: 600,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          ></Image>
+        )}
       </View>
-      <View style={Styles.text}>
+      <View style={Styles.detailsContainer}>
         <Text style={Styles.title}>{props.title}</Text>
+        {props.description && (
+          <Text style={Styles.description}>{props.description}</Text>
+        )}
       </View>
     </View>
   );
@@ -41,15 +58,14 @@ function ListItem(props) {
 const Styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    padding: 15,
+    padding: 20,
     backgroundColor: colors.white,
   },
 
-  text: {
-    padding: 10,
-    flex: 1,
-    width: 100,
+  detailsContainer: {
+    marginLeft: 15,
     alignItems: "flex-start",
+    justifyContent: "center",
   },
   title: { fontWeight: "500" },
   description: { color: "#636969" },

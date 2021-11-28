@@ -30,7 +30,9 @@ export default function App() {
     </View>
 
     <ListingDetails />
-    <WelcomeScreen />*/
+    <WelcomeScreen />
+   
+    <MyAccount></MyAccount>*/
     <View style={Styles.mainView}>
       <Listings></Listings>
     </View>
@@ -40,6 +42,5 @@ const Styles = StyleSheet.create({
   mainView: {
     backgroundColor: colors.light,
     flex: 1,
-    marginTop: 20,
   },
 });
