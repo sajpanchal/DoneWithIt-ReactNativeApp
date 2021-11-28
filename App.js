@@ -9,7 +9,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Card from "./app/components/Card";
 import ListingDetails from "./app/screens/ListingDetails";
 import Messages from "./app/screens/Messages";
-import ProfileTab from "./app/components/ProfileTab";
 import colors from "./app/config/colors";
 import ListItem from "./app/components/ListItem";
 import MyAccount from "./app/screens/MyAccount";
@@ -32,10 +31,11 @@ export default function App() {
     <ListingDetails />
     <WelcomeScreen />
    
-    <MyAccount></MyAccount>*/
+    
     <View style={Styles.mainView}>
       <Listings></Listings>
-    </View>
+    </View>*/
+    <MyAccount></MyAccount>
   );
 }
 const Styles = StyleSheet.create({

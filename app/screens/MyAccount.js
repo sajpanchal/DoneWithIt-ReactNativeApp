@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
-import ProfileTab from "../components/ProfileTab";
+
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
 import Constants from "expo-constants";
