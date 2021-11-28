@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
-import Card from "./Card";
-import ListItem from "./ListItem";
+import Card from "../components/Card";
+import ListItem from "../components/ListItem";
 export default function ListingDetails(props) {
   return (
     <View>
@@ -16,7 +16,7 @@ export default function ListingDetails(props) {
         <ListItem
           image={require("../assets/mosh.jpg")}
           title="Mosh Hamedani"
-          subtitle="5 Listings"
+          description="5 Listings"
         />
       </View>
     </View>

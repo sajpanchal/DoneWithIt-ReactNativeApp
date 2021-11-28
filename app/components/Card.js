@@ -17,8 +17,8 @@ const cardStyles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
     borderRadius: 15,
-    top: 20,
-    marginBottom: 20,
+    // top: 20,
+    //  marginBottom: 20,
     overflow: "hidden", //hides if the content is going outside its border.
   },
   image: {
