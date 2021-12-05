@@ -16,7 +16,7 @@ const loginStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 35,
-    margin: 5,
+    marginTop: 20,
     padding: 15,
   },
   Register: {
@@ -25,7 +25,7 @@ const loginStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 35,
-    margin: 5,
+    marginTop: 20,
     padding: 15,
   },
   text: {
@@ -33,6 +33,15 @@ const loginStyles = StyleSheet.create({
     fontSize: 18,
     textTransform: "uppercase",
     fontWeight: "bold",
+  },
+  Post: {
+    backgroundColor: "dodgerblue",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 35,
+    marginTop: 20,
+    padding: 15,
   },
 });
 export default CustomButton;

@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Image, TextInput, Switch } from "react-native";
 import ViewImage from "./app/screens/ViewImage";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import AppText from "./app/components/AppText";
@@ -13,7 +13,18 @@ import colors from "./app/config/colors";
 import ListItem from "./app/components/ListItem";
 import MyAccount from "./app/screens/MyAccount";
 import Listings from "./app/screens/Listings";
+import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
+import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingEditScreen from "./app/screens/LisitngEditScreen";
 export default function App() {
+  const [category, setCategory] = useState();
+  const categories = [
+    { label: "Furniture", value: 1 },
+    { label: "Clothing", value: 2 },
+    { label: "Cameras", value: 3 },
+  ];
   return (
     /*<View
       style={{
@@ -30,17 +41,18 @@ export default function App() {
 
     <ListingDetails />
     <WelcomeScreen />
-   
-    
-    <View style={Styles.mainView}>
-      <Listings></Listings>
-    </View>*/
-    <MyAccount></MyAccount>
+    <AppTextInput placeholder="User Name" icon="email"></AppTextInput>*/
+
+    <ListItem
+      image={require("./app/assets/mosh.jpg")}
+      title="T1"
+      description="D1"
+    ></ListItem>
   );
 }
 const Styles = StyleSheet.create({
   mainView: {
-    backgroundColor: colors.light,
     flex: 1,
+    justifyContent: "center",
   },
 });
