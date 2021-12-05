@@ -6,7 +6,11 @@ import colors from "../config/colors";
 //data gets transfered from parent to child but not the way up.
 //props has a property called children. it is going to take whatever is typed to display in parent component.
 function AppText(props) {
-  return <Text style={props.style}>{props.children}</Text>;
+  return (
+    <Text style={props.style} numberOfLines={2}>
+      {props.children}
+    </Text>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -61,8 +61,9 @@ function ListItem(props) {
         </View>
         <View
           style={{
-            flex: 1,
+            flex: 0.3,
             alignItems: "flex-end",
+            justifyContent: "center",
           }}
         >
           <MaterialCommunityIcons
@@ -85,6 +86,7 @@ const Styles = StyleSheet.create({
   },
 
   detailsContainer: {
+    flex: 1,
     marginLeft: 15,
     alignItems: "flex-start",
     justifyContent: "center",

@@ -43,11 +43,12 @@ export default function App() {
     <WelcomeScreen />
     <AppTextInput placeholder="User Name" icon="email"></AppTextInput>*/
 
-    <ListItem
+    /*  <ListItem
       image={require("./app/assets/mosh.jpg")}
-      title="T1"
-      description="D1"
-    ></ListItem>
+      title="T1sdfasfdadsadsadsadsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsds"
+      description="D1dsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsf"
+    ></ListItem>*/
+    <Messages></Messages>
   );
 }
 const Styles = StyleSheet.create({
