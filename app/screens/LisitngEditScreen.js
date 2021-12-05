@@ -33,6 +33,7 @@ function ListingEditScreen(props) {
           keyboardType="default"
           placeholder="Title"
           name="title"
+          width="100%"
         ></AppFormField>
         <AppFormField
           autoCapitalize="none"
@@ -40,6 +41,7 @@ function ListingEditScreen(props) {
           keyboardType="numbers-and-punctuation"
           placeholder="Price"
           name="price"
+          width="30%"
         ></AppFormField>
         <AppFormPicker
           name="category"
@@ -51,6 +53,7 @@ function ListingEditScreen(props) {
           keyboardType="default"
           placeholder="Description"
           name="description"
+          width="100%"
         ></AppFormField>
         <SubmitButton title="Post"></SubmitButton>
       </AppForm>

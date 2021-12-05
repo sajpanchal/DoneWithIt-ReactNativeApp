@@ -47,8 +47,9 @@ export default function App() {
       image={require("./app/assets/mosh.jpg")}
       title="T1sdfasfdadsadsadsadsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsds"
       description="D1dsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsf"
-    ></ListItem>*/
-    <Messages></Messages>
+    ></ListItem>
+    <Messages></Messages>*/
+    <ListingEditScreen></ListingEditScreen>
   );
 }
 const Styles = StyleSheet.create({

@@ -19,7 +19,10 @@ function AppPicker(props) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <React.Fragment>
-      <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
+      <TouchableWithoutFeedback
+        style={{ width: "50%" }}
+        onPress={() => setModalVisible(true)}
+      >
         <View style={Styles.container}>
           {props.icon && (
             <MaterialCommunityIcons
@@ -42,13 +45,19 @@ function AppPicker(props) {
               {props.placeholder}
             </AppText>
           )}
-
-          <MaterialCommunityIcons
-            name="chevron-down"
-            size={20}
-            color={colors.medium}
-            style={{ marginLeft: "60%" }}
-          ></MaterialCommunityIcons>
+          <View
+            style={{
+              flex: 1,
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
+            }}
+          >
+            <MaterialCommunityIcons
+              name="chevron-down"
+              size={20}
+              color={colors.medium}
+            ></MaterialCommunityIcons>
+          </View>
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
@@ -77,7 +86,7 @@ const Styles = StyleSheet.create({
     backgroundColor: colors.light,
     borderRadius: 10,
     flexDirection: "row",
-    width: "100%",
+    width: "50%",
     padding: 15,
     marginVertical: 10,
     alignItems: "center",
