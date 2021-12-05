@@ -7,9 +7,13 @@ import AppFormField from "./../components/forms/AppFormField";
 import AppFormPicker from "../components/forms/AppFormPicker";
 import colors from "../config/colors";
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 },
+  { label: "Furniture", icon: "floor-lamp", value: 1, bgcolor: "#fc5c65" },
+  { label: "Clothing", icon: "shoe-heel", value: 2, bgcolor: "#2bcbba" },
+  { label: "Cameras", icon: "camera", value: 3, bgcolor: "#fed330" },
+  { label: "Cars", icon: "car", value: 4, bgcolor: "#fd9644" },
+  { label: "Games", icon: "cards", value: 5, bgcolor: "#26de81" },
+  { label: "Sports", icon: "basketball", value: 6, bgcolor: "#45aaf2" },
+  { label: "Movies & Music", icon: "headphones", value: 6, bgcolor: "#4b7bec" },
 ];
 const initialValues = { title: "", price: "", category: null, description: "" };
 const validationSchema = Yup.object().shape({

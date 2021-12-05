@@ -33,7 +33,9 @@ function AppPicker(props) {
             ></MaterialCommunityIcons>
           )}
           {props.selectedItem ? (
-            <AppText style={Styles.text}>{props.selectedItem.label}</AppText>
+            <View>
+              <AppText style={Styles.text}>{props.selectedItem.label}</AppText>
+            </View>
           ) : (
             <AppText
               style={{
@@ -61,14 +63,18 @@ function AppPicker(props) {
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
-        <Screen>
+        <Screen style={{ flex: 1, alignItems: "center" }}>
           <Button title="close" onPress={() => setModalVisible(false)}></Button>
+
           <FlatList
             data={props.items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={3}
             renderItem={({ item }) => (
               <PickerItem
                 label={item.label}
+                icon={item.icon}
+                bgcolor={item.bgcolor}
                 onPress={() => {
                   setModalVisible(false);
                   props.onSelectItem(item);
@@ -86,7 +92,7 @@ const Styles = StyleSheet.create({
     backgroundColor: colors.light,
     borderRadius: 10,
     flexDirection: "row",
-    width: "50%",
+    width: "60%",
     padding: 15,
     marginVertical: 10,
     alignItems: "center",

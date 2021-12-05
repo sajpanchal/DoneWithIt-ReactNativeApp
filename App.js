@@ -50,11 +50,16 @@ export default function App() {
     ></ListItem>
     <Messages></Messages>*/
     <ListingEditScreen></ListingEditScreen>
+    /*<View style={Styles.mainView}>
+      <View style={{ flex: 0.1, backgroundColor: "red" }}></View>
+      <View style={{ flex: 0.1, backgroundColor: "yellow" }}></View>
+    </View>*/
   );
 }
 const Styles = StyleSheet.create({
   mainView: {
     flex: 1,
     justifyContent: "center",
+    flexDirection: "row",
   },
 });
