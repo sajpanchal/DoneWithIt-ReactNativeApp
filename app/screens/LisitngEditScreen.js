@@ -6,6 +6,7 @@ import Screen from "./../components/Screen";
 import AppFormField from "./../components/forms/AppFormField";
 import AppFormPicker from "../components/forms/AppFormPicker";
 import colors from "../config/colors";
+import FormImagePicker from "../components/forms/FormImagePicker";
 const categories = [
   { label: "Furniture", icon: "floor-lamp", value: 1, bgcolor: "#fc5c65" },
   { label: "Clothing", icon: "shoe-heel", value: 2, bgcolor: "#2bcbba" },
@@ -15,12 +16,19 @@ const categories = [
   { label: "Sports", icon: "basketball", value: 6, bgcolor: "#45aaf2" },
   { label: "Movies & Music", icon: "headphones", value: 6, bgcolor: "#4b7bec" },
 ];
-const initialValues = { title: "", price: "", category: null, description: "" };
+const initialValues = {
+  title: "",
+  price: "",
+  category: null,
+  description: "",
+  images: [],
+};
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.number().required().min(1).max(10000).label("Price"),
   category: Yup.object().required().nullable().label("Category"),
   description: Yup.string().min(2).label("Description"),
+  images: Yup.array().min(1, "Please select atleast on image.").label("Images"),
 });
 
 function ListingEditScreen(props) {
@@ -31,6 +39,7 @@ function ListingEditScreen(props) {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker name="images"></FormImagePicker>
         <AppFormField
           autoCapitalize="words"
           autoCorrect={false}
