@@ -12,6 +12,7 @@ import ListingEditScreen from "./app/screens/LisitngEditScreen";
 import Messages from "./app/screens/Messages";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import AuthNavigator from "./app/navigation/AuthNavigator";
+import NavigationTheme from "./app/navigation/NavigationTheme";
 
 const Link = () => {
   const navigation = useNavigation();
@@ -125,7 +126,7 @@ const TabNavigator = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={NavigationTheme}>
       <AuthNavigator></AuthNavigator>
     </NavigationContainer>
   );
