@@ -9,16 +9,14 @@ const ListingNavigator = () => (
   <Stack.Navigator
     initialRouteName="listings"
     screenOptions={{
-      headerStyle: { backgroundColor: "tomato" },
-      headerTintColor: "white",
       presentation: "modal",
+      headerShown: false,
     }}
   >
     <Stack.Screen name="listings" component={Listings}></Stack.Screen>
     <Stack.Screen
       name="Listing Details"
       component={ListingDetails}
-      options={{ headerShown: false }}
     ></Stack.Screen>
   </Stack.Navigator>
 );

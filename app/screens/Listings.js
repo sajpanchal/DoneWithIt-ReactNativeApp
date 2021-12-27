@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Constants from "expo-constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import routes from "../navigation/routes";
 
 function Listings(props) {
   const [selectedId, setSelectedId] = useState(null);
@@ -30,7 +31,7 @@ function Listings(props) {
       renderItem={({ item }) => (
         <View style={{ padding: 15 }}>
           <Card
-            onPress={() => navigation.navigate("Listing Details", item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
             title={item.title}
             subtitle={item.subtitle}
             image={item.image}
