@@ -1,8 +1,10 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, ImageBackground } from "react-native";
 import CustomButton from "../components/CustomButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function WelcomeScreen() {
+  const navigation = useNavigation();
   return (
     <ImageBackground
       blurRadius={10}
@@ -28,13 +30,13 @@ export default function WelcomeScreen() {
         <CustomButton
           type="Login"
           onPress={() => {
-            console.log("login btn tapped!");
+            navigation.navigate("Login");
           }}
         ></CustomButton>
         <CustomButton
           type="Register"
           onPress={() => {
-            console.log("register btn tapped!");
+            navigation.navigate("Register");
           }}
         ></CustomButton>
       </View>

@@ -1,12 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
-
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
 import Constants from "expo-constants";
 import ListItemSeparator from "./../components/ListItemSeparator";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 function MyAccount(props) {
+  const navigator = useNavigation();
   const items = [
     {
       id: 0,
@@ -35,11 +37,19 @@ function MyAccount(props) {
           keyExtractor={(item) => item.id.toString()}
           ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
-            <ListItem
-              title={item.title}
-              icon={item.icon}
-              bgcolor={item.bgcolor}
-            ></ListItem>
+            <TouchableOpacity
+              onPress={() => {
+                if (item.id == 1) {
+                  navigator.navigate("Messages");
+                }
+              }}
+            >
+              <ListItem
+                title={item.title}
+                icon={item.icon}
+                bgcolor={item.bgcolor}
+              ></ListItem>
+            </TouchableOpacity>
           )}
         ></FlatList>
       </View>
