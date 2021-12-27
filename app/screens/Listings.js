@@ -28,20 +28,14 @@ function Listings(props) {
       data={cards}
       keyExtractor={(card) => card.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity
-          onPress={() => {
-            setSelectedId(item.id);
-            navigation.navigate("Listing Details");
-          }}
-        >
-          <View style={{ padding: 15 }}>
-            <Card
-              title={item.title}
-              subtitle={item.subtitle}
-              image={item.image}
-            ></Card>
-          </View>
-        </TouchableOpacity>
+        <View style={{ padding: 15 }}>
+          <Card
+            onPress={() => navigation.navigate("Listing Details", item)}
+            title={item.title}
+            subtitle={item.subtitle}
+            image={item.image}
+          ></Card>
+        </View>
       )}
       extraData={selectedId}
     ></FlatList>

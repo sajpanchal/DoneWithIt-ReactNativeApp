@@ -21,6 +21,7 @@ function MyAccount(props) {
       title: "My Messages",
       icon: "email",
       bgcolor: colors.secondary,
+      targetScreen: "Messages",
     },
   ];
   return (
@@ -30,32 +31,28 @@ function MyAccount(props) {
         description="programmingwithmosh@gmail.com"
         image={require("../assets/mosh.jpg")}
       ></ListItem>
-      <View style={{ marginTop: 50 }}>
-        <FlatList
-          scrollEnabled={false}
-          data={items}
-          keyExtractor={(item) => item.id.toString()}
-          ItemSeparatorComponent={ListItemSeparator}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              onPress={() => {
-                if (item.id == 1) {
-                  navigator.navigate("Messages");
-                }
-              }}
-            >
-              <ListItem
-                title={item.title}
-                icon={item.icon}
-                bgcolor={item.bgcolor}
-              ></ListItem>
-            </TouchableOpacity>
-          )}
-        ></FlatList>
-      </View>
-      <View style={{ marginTop: 20 }}>
-        <ListItem title="Log Out" icon="logout" bgcolor="#ffe66d"></ListItem>
-      </View>
+
+      <FlatList
+        scrollEnabled={false}
+        data={items}
+        keyExtractor={(item) => item.id.toString()}
+        ItemSeparatorComponent={ListItemSeparator}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => {
+              navigator.navigate(item.targetScreen);
+            }}
+          >
+            <ListItem
+              title={item.title}
+              icon={item.icon}
+              bgcolor={item.bgcolor}
+            ></ListItem>
+          </TouchableOpacity>
+        )}
+      ></FlatList>
+
+      <ListItem title="Log Out" icon="logout" bgcolor="#ffe66d"></ListItem>
     </View>
   );
 }
