@@ -9,6 +9,7 @@ import colors from "../config/colors";
 import FormImagePicker from "../components/forms/FormImagePicker";
 import listingsApi from "../api/listings";
 import useLocation from "../hooks/useLocation";
+import UploadScreen from "./UploadScreen";
 
 const categories = [
   { label: "Furniture", icon: "floor-lamp", value: 1, bgcolor: "#fc5c65" },
@@ -36,18 +37,30 @@ const validationSchema = Yup.object().shape({
 
 function ListingEditScreen(props) {
   const location = useLocation();
+  const [uploadVisible, setUploadVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
   const submitForm = async (listing) => {
+    setProgress(0);
+    setUploadVisible(true);
     const result = await listingsApi.addListing(
       { ...listing, location },
-      (progress) => console.log(progress)
+      (progress) => setProgress(progress)
     );
+
     if (!result.ok) {
+      setUploadVisible(false);
       return alert("Couldn't save the listing");
     }
-    return alert("Success");
+
+    return;
   };
   return (
     <Screen style={styles.container}>
+      <UploadScreen
+        onDone={() => setUploadVisible(false)}
+        visible={uploadVisible}
+        progress={progress}
+      ></UploadScreen>
       <AppForm
         initialValues={initialValues}
         onSubmit={(values) => submitForm(values)}
