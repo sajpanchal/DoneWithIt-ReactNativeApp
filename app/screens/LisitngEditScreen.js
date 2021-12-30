@@ -10,6 +10,7 @@ import FormImagePicker from "../components/forms/FormImagePicker";
 import listingsApi from "../api/listings";
 import useLocation from "../hooks/useLocation";
 import UploadScreen from "./UploadScreen";
+import { useFormikContext } from "formik";
 
 const categories = [
   { label: "Furniture", icon: "floor-lamp", value: 1, bgcolor: "#fc5c65" },
@@ -37,9 +38,10 @@ const validationSchema = Yup.object().shape({
 
 function ListingEditScreen(props) {
   const location = useLocation();
+
   const [uploadVisible, setUploadVisible] = useState(false);
   const [progress, setProgress] = useState(0);
-  const submitForm = async (listing) => {
+  const submitForm = async (listing, { resetForm }) => {
     setProgress(0);
     setUploadVisible(true);
     const result = await listingsApi.addListing(
@@ -51,7 +53,7 @@ function ListingEditScreen(props) {
       setUploadVisible(false);
       return alert("Couldn't save the listing");
     }
-
+    resetForm();
     return;
   };
   return (
@@ -63,7 +65,7 @@ function ListingEditScreen(props) {
       ></UploadScreen>
       <AppForm
         initialValues={initialValues}
-        onSubmit={(values) => submitForm(values)}
+        onSubmit={submitForm}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images"></FormImagePicker>
