@@ -6,7 +6,10 @@ export default function Card(props) {
   return (
     <TouchableWithoutFeedback onPress={props.onPress}>
       <View style={cardStyles.card}>
-        <Image style={cardStyles.image} source={props.image}></Image>
+        <Image
+          style={cardStyles.image}
+          source={{ uri: props.imageUrl }}
+        ></Image>
         <View style={cardStyles.text}>
           <Text style={cardStyles.title}>{props.title}</Text>
           <Text style={cardStyles.subtitle}>{props.subtitle}</Text>

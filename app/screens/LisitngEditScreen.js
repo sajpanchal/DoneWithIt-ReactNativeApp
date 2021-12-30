@@ -7,7 +7,9 @@ import AppFormField from "./../components/forms/AppFormField";
 import AppFormPicker from "../components/forms/AppFormPicker";
 import colors from "../config/colors";
 import FormImagePicker from "../components/forms/FormImagePicker";
-import AppLocation from "./../components/AppLocation";
+import listingsApi from "../api/listings";
+import useLocation from "../hooks/useLocation";
+
 const categories = [
   { label: "Furniture", icon: "floor-lamp", value: 1, bgcolor: "#fc5c65" },
   { label: "Clothing", icon: "shoe-heel", value: 2, bgcolor: "#2bcbba" },
@@ -23,7 +25,6 @@ const initialValues = {
   category: null,
   description: "",
   images: [],
-  location: "",
 };
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -31,15 +32,25 @@ const validationSchema = Yup.object().shape({
   category: Yup.object().required().nullable().label("Category"),
   description: Yup.string().min(2).label("Description"),
   images: Yup.array().min(1, "Please select atleast on image.").label("Images"),
-  location: Yup.object().nullable().optional(),
 });
 
 function ListingEditScreen(props) {
+  const location = useLocation();
+  const submitForm = async (listing) => {
+    const result = await listingsApi.addListing(
+      { ...listing, location },
+      (progress) => console.log(progress)
+    );
+    if (!result.ok) {
+      return alert("Couldn't save the listing");
+    }
+    return alert("Success");
+  };
   return (
     <Screen style={styles.container}>
       <AppForm
         initialValues={initialValues}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => submitForm(values)}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images"></FormImagePicker>
@@ -71,7 +82,7 @@ function ListingEditScreen(props) {
           name="description"
           width="100%"
         ></AppFormField>
-        <AppLocation name="location"></AppLocation>
+
         <SubmitButton title="Post"></SubmitButton>
       </AppForm>
     </Screen>

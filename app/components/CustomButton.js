@@ -28,6 +28,16 @@ const loginStyles = StyleSheet.create({
     marginTop: 20,
     padding: 15,
   },
+  Retry: {
+    backgroundColor: "dodgerblue",
+    width: "90%",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 35,
+    marginTop: 20,
+    padding: 20,
+    marginHorizontal: 10,
+  },
   text: {
     color: "white",
     fontSize: 18,

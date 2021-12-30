@@ -9,8 +9,8 @@ export default function ListingDetails({ route }) {
       <View style={Styles.cardContainer}>
         <Card
           title={listing.title}
-          subtitle={listing.subtitle}
-          image={listing.image}
+          subtitle={"$" + listing.price}
+          imageUrl={listing.images[0].url}
         />
       </View>
       <View style={Styles.userContainer}>

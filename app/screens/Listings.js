@@ -2,44 +2,57 @@ import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import Card from "../components/Card";
 import Constants from "expo-constants";
+import listingsApi from "../api/listings";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import routes from "../navigation/routes";
+import { useEffect } from "react/cjs/react.development";
+import AppText from "../components/AppText";
+import Screen from "./../components/Screen";
+import CustomButton from "../components/CustomButton";
+import ActivityIndicator from "./../components/ActivityIndicator";
+import useApi from "./../hooks/useApi";
 
 function Listings(props) {
   const [selectedId, setSelectedId] = useState(null);
+
+  const {
+    data: listings,
+    error,
+    loading,
+    request: loadListings,
+  } = useApi(listingsApi.getListings);
   const navigation = useNavigation();
-  const cards = [
-    {
-      id: 1,
-      title: "Red Jacket for Sale",
-      subtitle: "$100",
-      image: require("../assets/jacket.jpg"),
-    },
-    {
-      id: 2,
-      title: "Couch in great condition",
-      subtitle: "$1000",
-      image: require("../assets/couch.jpg"),
-    },
-  ];
+  useEffect(() => {
+    loadListings(1, 2, 3);
+  }, []);
+
   return (
-    <FlatList
-      style={{ marginTop: Constants.statusBarHeight }}
-      data={cards}
-      keyExtractor={(card) => card.id.toString()}
-      renderItem={({ item }) => (
-        <View style={{ padding: 15 }}>
-          <Card
-            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-            title={item.title}
-            subtitle={item.subtitle}
-            image={item.image}
-          ></Card>
-        </View>
+    <Screen>
+      {error && (
+        <>
+          <AppText>Couldn't retrieve the listings.</AppText>
+          <CustomButton type="Retry" onPress={loadListings} />
+        </>
       )}
-      extraData={selectedId}
-    ></FlatList>
+      <ActivityIndicator visible={true}></ActivityIndicator>
+      <FlatList
+        style={{ marginTop: Constants.statusBarHeight }}
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <View style={{ padding: 15 }}>
+            <Card
+              onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+              title={item.title}
+              subtitle={"$" + item.price}
+              imageUrl={item.images[0].url}
+            ></Card>
+          </View>
+        )}
+        extraData={selectedId}
+      ></FlatList>
+    </Screen>
   );
 }
 
