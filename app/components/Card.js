@@ -1,14 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-
+import { Image } from "react-native-expo-image-cache";
 export default function Card(props) {
   return (
     <TouchableWithoutFeedback onPress={props.onPress}>
       <View style={cardStyles.card}>
         <Image
           style={cardStyles.image}
-          source={{ uri: props.imageUrl }}
+          tint="light"
+          preview={{ uri: props.thumbnailUrl }}
+          uri={props.imageUrl}
         ></Image>
         <View style={cardStyles.text}>
           <Text style={cardStyles.title}>{props.title}</Text>

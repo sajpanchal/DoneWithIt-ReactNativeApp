@@ -24,7 +24,7 @@ function Listings(props) {
   } = useApi(listingsApi.getListings);
   const navigation = useNavigation();
   useEffect(() => {
-    loadListings(1, 2, 3);
+    loadListings();
   }, []);
 
   return (
@@ -47,6 +47,7 @@ function Listings(props) {
               title={item.title}
               subtitle={"$" + item.price}
               imageUrl={item.images[0].url}
+              thumbnailUrl={item.images[0].thumbnailUrl}
             ></Card>
           </View>
         )}
